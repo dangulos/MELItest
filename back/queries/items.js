@@ -15,13 +15,16 @@ module.exports = {
 			let categories = response.data.filters.find(
 				filter => filter.id === 'category'
 			);
-			data.categories = categories.values[0].path_from_root.map(
-				path => path.name
-			);
+			data.categories = !categories
+				? []
+				: categories.values[0].path_from_root.map(path => path.name);
 
 			// get items
-
-			let items = response.data.results.slice(0, 4).map(item => {
+			let results =
+				response.data.results.length > 4
+					? response.data.results.slice(0, 4)
+					: response.data.results;
+			let items = results.map(item => {
 				let obj = {
 					id: item.id,
 					title: item.title,

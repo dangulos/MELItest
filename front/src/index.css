@@ -309,22 +309,23 @@ Form
 }
 
 .form-control label {
-	outline: none;
+	padding: 12px 20px;
 	display: block;
 	font-weight: bold;
-	padding: 0px;
 	letter-spacing: 0.25rem;
 	color: var(--offWhite);
 }
 .form-control input {
+	box-sizing: border-box;
+	margin: 8px 0;
 	border: 0;
 	outline: none;
 	border-radius: 0px;
 	margin: 0px;
-	padding: 0px;
 	width: 90%;
 	background-color: var(--offWhite);
 	height: 30px;
+	padding: 12px 20px;
 }
 .form-control button {
 	border: 0;

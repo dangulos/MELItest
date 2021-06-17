@@ -9,12 +9,11 @@ const routes = require('./routes/routes.js');
 const port = process.env.PORT || 2001;
 const app = express();
 
-const whitelist = ['http://localhost:8100'];
+const whitelist = ['http://localhost:3000'];
 
 const corsOptions = {
 	origin: function (origin, callback) {
-		if (true || !origin || whitelist.indexOf(origin) !== -1)
-			callback(null, true);
+		if (!origin || whitelist.indexOf(origin) !== -1) callback(null, true);
 		else
 			callback(
 				new Error(
