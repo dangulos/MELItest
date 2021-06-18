@@ -26,7 +26,7 @@ cd back
 npm i && npm start
 ```
 
-or if you want to use nodemon:
+If you prefer to use nodemon:
 
 ```bash
 cd back
