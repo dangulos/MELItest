@@ -1,5 +1,8 @@
 'use strict';
 
+// Template for a simple express server
+
+// Env variables handling
 process.env.NODE_ENV || require('dotenv').config();
 
 const express = require('express');
@@ -12,6 +15,7 @@ const app = express();
 const whitelist = ['http://localhost:3000'];
 
 const corsOptions = {
+	// Origin whitelist
 	origin: function (origin, callback) {
 		if (!origin || whitelist.indexOf(origin) !== -1) callback(null, true);
 		else

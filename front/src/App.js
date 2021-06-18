@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import pages
-import Home from './pages/Home';
 import ItemList from './pages/ItemList';
-import SingleCocktail from './pages/SingleCocktail';
+import SingleItem from './pages/SingleItem';
 import Error from './pages/Error';
 // import components
 import Navbar from './components/Navbar';
@@ -15,11 +14,11 @@ function App() {
 				<Route exact path="/">
 					{/* <Home /> */}
 				</Route>
-				<Route path="/items">
+				<Route exact path="/items">
 					<ItemList />
 				</Route>
-				<Route path="/items/:id">
-					<SingleCocktail />
+				<Route exact path="/items/:id">
+					<SingleItem />
 				</Route>
 				<Route path="*">
 					<Error />
